@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { formVariants } from "../../utils/contsctVariants";
+import React from "react";
 
-// type FormDataLayoutT={
-//   sendMessage: (e: React.FormEvent)=>{ }
-// }
+type FormDataLayoutT = {
+  sendMessage: (e: React.FormEvent<Element>) => void;
+  formRef: React.RefObject<HTMLFormElement>;
+};
 
-export const FormDataLayout = ({ sendMessage }) => {
+export const FormDataLayout = ({ sendMessage, formRef }: FormDataLayoutT) => {
   return (
     <motion.div variants={formVariants}>
-      <form className="space-y-6">
+      <form ref={formRef} onSubmit={sendMessage} className="space-y-6">
         <div>
           <label
             htmlFor="name"
@@ -19,10 +21,13 @@ export const FormDataLayout = ({ sendMessage }) => {
           <input
             type="text"
             id="name"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline bg-surface"
+            name="name"
+            className="shadow appearance-none border text-black rounded w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline "
             placeholder="Your Name"
+            required
           />
         </div>
+
         <div>
           <label
             htmlFor="email"
@@ -33,10 +38,13 @@ export const FormDataLayout = ({ sendMessage }) => {
           <input
             type="email"
             id="email"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline bg-surface"
+            name="email"
+            className="shadow appearance-none border text-black rounded w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline"
             placeholder="Your Email"
+            required
           />
         </div>
+
         <div>
           <label
             htmlFor="message"
@@ -46,11 +54,14 @@ export const FormDataLayout = ({ sendMessage }) => {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={5}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline bg-surface"
+            className="shadow appearance-none border rounded text-black w-full py-2 px-3 text-text focus:outline-none focus:shadow-outline"
             placeholder="Your Message"
+            required
           />
         </div>
+
         <div>
           <button
             type="submit"
