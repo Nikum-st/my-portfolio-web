@@ -25,7 +25,7 @@ function App() {
                 <Home
                   name="Nikita Umanskii"
                   title="Frontend Developer"
-                  backgroundImageUrl="../public/img/12.png"
+                  backgroundImageUrl="/img/12.png"
                 />
               }
             />
