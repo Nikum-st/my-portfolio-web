@@ -56,8 +56,17 @@ const skills = {
 
 const profileImageUrl = "../../public/img/IMG_7039_jpg.jpg";
 
-const aboutText =
-  "I build responsive and performant web applications using modern JavaScript frameworks and backend technologies. Skilled in delivering scalable solutions from design to deployment.";
+const aboutText1 = `
+Hi! I’m Nikita, a Frontend Developer from Sakhalin Island, Russia — where winter feels like a boss fight.
+ Now I code from sunny Italy, fueled by espresso and a love for clean, user-friendly interfaces. 
+I have over 2 years of experience building responsive web applications, landing pages, and corporate websites using React, TypeScript, Redux Toolkit, and Tailwind CSS.
+
+`;
+const aboutText2 = `
+I’ve worked at Nimax, creating landing pages and corporate sites like AAG and Letovo, and on other projects I built SPA applications. 
+I also mentored junior developers at Result University and started my career at Zapal.agency, working on interactive sites like Senior Bay and Showbox. 
+I love learning new tech, solving tricky bugs (sometimes at 2 a.m. with coffee ☕), and making code that not only works but also makes people smile.
+`;
 
 const About = () => {
   const containerVariants = {
@@ -105,7 +114,8 @@ const About = () => {
           </motion.div>
           <motion.div variants={textVariants}>
             <h2 className="text-4xl font-bold text-text mb-4">About Me</h2>
-            <p className="text-textSecondary text-lg mb-8">{aboutText}</p>
+            <p className="text-textSecondary text-lg mb-8 ">{aboutText1}</p>
+            <p className="text-textSecondary text-lg mb-8 ">{aboutText2}</p>
             <h3 className="text-2xl font-semibold text-text mb-2">Skills</h3>
             <div className="space-y-6">
               {Object.entries(skills).map(([category, items]) => (

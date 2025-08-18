@@ -65,7 +65,7 @@ export const FormDataLayout = ({ sendMessage, formRef }: FormDataLayoutT) => {
         <div>
           <button
             type="submit"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white hover:bg-opacity-80 transition duration-300"
+            className="inline-flex items-center px-6 py-3 rounded-full bg-primary hover:bg-opacity-80 transition duration-300"
           >
             Send Message
           </button>
