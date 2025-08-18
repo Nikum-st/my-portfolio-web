@@ -9,7 +9,7 @@ export const SocialMedia = () => (
     variants={formVariants}
   >
     <motion.a
-      href="/public/Nikita Umanskiy Frontend.pdf"
+      href="/Nikita Umanskiy Frontend.pdf"
       download
       className="inline-flex items-center gap-2 px-8 py-4 mb-4 rounded-full shadow-lg  font-medium  hover:shadow-xl hover:scale-105 transition duration-300"
       whileHover={{ scale: 1.08 }}
