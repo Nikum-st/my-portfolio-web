@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "./components/ProjectCard";
-import { projects } from "./projects";
+import { projects } from "./utils/projects";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -46,13 +46,13 @@ const Portfolio = () => {
       <AnimatePresence>
         {selectedProject && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black text-white bg-opacity-90 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-surface rounded-xl p-8 max-w-4xl w-full relative"
+              className=" rounded-xl p-8 max-w-4xl w-full relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -114,14 +114,16 @@ const Portfolio = () => {
                 Technologies:
               </h4>
               <ul className="flex flex-wrap gap-2 mb-4">
-                {selectedProject.technologies.map((tech: string, i: number) => (
-                  <li
-                    key={i}
-                    className="px-3 py-1 text-xs bg-background rounded-full text-textSecondary"
-                  >
-                    {tech}
-                  </li>
-                ))}
+                {selectedProject.technologies?.map(
+                  (tech: string, i: number) => (
+                    <li
+                      key={i}
+                      className="px-3 py-1 text-xs bg-background rounded-full text-textSecondary"
+                    >
+                      {tech}
+                    </li>
+                  )
+                )}
               </ul>
 
               {/* Кнопки */}
