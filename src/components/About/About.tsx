@@ -54,7 +54,7 @@ const skills = {
   ],
 };
 
-const profileImageUrl = "../../public/img/IMG_7039_jpg.jpg";
+const profileImageUrl = "/img/IMG_7039_jpg.jpg";
 
 const aboutText1 = `
 Hi! I’m Nikita, a Frontend Developer from Sakhalin Island, Russia — where winter feels like a boss fight.
