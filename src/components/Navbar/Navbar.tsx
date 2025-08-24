@@ -1,4 +1,7 @@
-import { Link, useMatch } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { NameHeader } from "./components/NameHeader";
@@ -9,6 +12,9 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const navVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
@@ -17,8 +23,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
-
-  const isHomePage = useMatch("/");
 
   return (
     !isHomePage && (
@@ -33,24 +37,24 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         animate="visible"
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-text">
+          <Link href="/" className="text-2xl font-bold text-text">
             <NameHeader />
           </Link>
           <div className="flex items-center space-x-4">
             <Link
-              to="/about"
+              href="/about"
               className="text-text hover:text-accent transition duration-300"
             >
               About
             </Link>
             <Link
-              to="/portfolio"
+              href="/portfolio"
               className="text-text hover:text-accent transition duration-300"
             >
               Portfolio
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="text-text hover:text-accent transition duration-300"
             >
               Contact

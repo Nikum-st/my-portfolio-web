@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { ArrowDownCircle } from "lucide-react";
 
@@ -57,7 +59,7 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
         </motion.p>
         <motion.div variants={textVariants}>
           <Link
-            to="/about"
+            href="/about"
             className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white hover:bg-opacity-80 transition duration-300"
           >
             <span className="mr-2">Explore</span>
