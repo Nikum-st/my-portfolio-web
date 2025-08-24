@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import {
   FaReact,
@@ -106,7 +107,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div variants={imageVariants}>
-            <img
+            <Image
               src={profileImageUrl}
               alt="Profile"
               className="rounded-full shadow-lg"

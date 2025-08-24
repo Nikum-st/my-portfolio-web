@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "./utils/projects";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -87,9 +88,11 @@ const Portfolio = () => {
                 >
                   {selectedProject.images.map((img: string, idx: number) => (
                     <SwiperSlide key={idx}>
-                      <img
+                      <Image
                         src={img}
                         alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                        width={800}
+                        height={600}
                         className="w-full h-full object-cover rounded-xl"
                       />
                     </SwiperSlide>
