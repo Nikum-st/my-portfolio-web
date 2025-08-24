@@ -24,7 +24,7 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
     <Link
       href={href}
       onClick={handleClick}
-      className={`text-white hover:text-purple-500 transition duration-300 ${className}`}
+      className={`text-text hover:text-purple-500 transition duration-300 ${className}`}
     >
       {children}
     </Link>
