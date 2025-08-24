@@ -108,6 +108,8 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div variants={imageVariants}>
             <Image
+              width={800}
+              height={800}
               src={profileImageUrl}
               alt="Profile"
               className="rounded-full shadow-lg"

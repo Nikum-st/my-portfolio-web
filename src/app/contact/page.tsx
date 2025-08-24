@@ -1,9 +1,11 @@
+"use client";
+
 import { Metadata } from "next";
 import Navbar from "../../components/Navbar/Navbar";
 import { useTheme } from "../../hooks/useTheme";
-import { Contact } from "lucide-react";
+import Contact from "../../components/Contact/Contact";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Contact - Nikita Umanskii",
   description: "Get in touch with Nikita Umanskii",
 };

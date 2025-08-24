@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "../components/Navbar/Navbar";
 import { useTheme } from "../hooks/useTheme";
 import Home from "../components/Home/Home";

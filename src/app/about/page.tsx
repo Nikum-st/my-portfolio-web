@@ -1,9 +1,11 @@
+"use client";
+
 import { Metadata } from "next";
 import Navbar from "../../components/Navbar/Navbar";
 import About from "../../components/About/About";
 import { useTheme } from "../../hooks/useTheme";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "About - Nikita Umanskii",
   description: "Learn more about Nikita Umanskii, Frontend Developer",
 };

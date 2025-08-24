@@ -1,9 +1,11 @@
+"use client";
+
 import { Metadata } from "next";
 import Navbar from "../../components/Navbar/Navbar";
 import { useTheme } from "../../hooks/useTheme";
 import Portfolio from "../../components/Portfolio/Portfolio";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Portfolio - Nikita Umanskii",
   description: "View my projects and work experience",
 };
