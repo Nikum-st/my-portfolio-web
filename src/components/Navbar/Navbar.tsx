@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { NameHeader } from "./components/NameHeader";
+import { NavigationLink } from "../NavigationLink/NavigationLink";
+import { Loader } from "../Loader/Loader";
+import { useNavigation } from "../../hooks/useNavigation";
 
 interface NavbarProps {
   toggleTheme: () => void;
@@ -14,6 +17,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const { isNavigating } = useNavigation();
 
   const navVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -25,50 +29,38 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   };
 
   return (
-    !isHomePage && (
-      <motion.header
-        className={`fixed top-0 left-0 w-full shadow-md z-20 ${
-          theme === "dark"
-            ? "bg-[rgba(26,32,44,0.9)]"
-            : "bg-[rgba(255,255,255,0.9)]"
-        }`}
-        variants={navVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-text">
-            <NameHeader />
-          </Link>
-          <div className="flex items-center space-x-4">
-            <Link
-              href="/about"
-              className="text-text hover:text-accent transition duration-300"
-            >
-              About
+    <>
+      {isNavigating && <Loader size="medium" color="text-white" />}
+      {!isHomePage && (
+        <motion.header
+          className={`fixed top-0 left-0 w-full shadow-md z-20 ${
+            theme === "dark"
+              ? "bg-[rgba(26,32,44,0.9)]"
+              : "bg-[rgba(255,255,255,0.9)]"
+          }`}
+          variants={navVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <Link href="/" className="text-2xl font-bold text-text">
+              <NameHeader />
             </Link>
-            <Link
-              href="/portfolio"
-              className="text-text hover:text-accent transition duration-300"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/contact"
-              className="text-text hover:text-accent transition duration-300"
-            >
-              Contact
-            </Link>
-            <button
-              onClick={toggleTheme}
-              className="text-text hover:text-accent transition duration-300"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            <div className="flex items-center space-x-4">
+              <NavigationLink href="/about">About</NavigationLink>
+              <NavigationLink href="/portfolio">Portfolio</NavigationLink>
+              <NavigationLink href="/contact">Contact</NavigationLink>
+              <button
+                onClick={toggleTheme}
+                className="text-text hover:text-fuchsia-500 transition duration-300"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            </div>
           </div>
-        </div>
-      </motion.header>
-    )
+        </motion.header>
+      )}
+    </>
   );
 };
 

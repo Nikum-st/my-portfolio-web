@@ -673,8 +673,14 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-4 {
+  margin-top: 1rem;
+}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: flex;
@@ -688,14 +694,35 @@ video {
 .hidden {
   display: none;
 }
+.h-4 {
+  height: 1rem;
+}
 .h-56 {
   height: 14rem;
 }
-.h-full {
-  height: 100%;
+.h-6 {
+  height: 1.5rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-auto {
+  height: auto;
+}
+.max-h-\[90vh\] {
+  max-height: 90vh;
 }
 .min-h-screen {
   min-height: 100vh;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-8 {
+  width: 2rem;
 }
 .w-full {
   width: 100%;
@@ -765,11 +792,17 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
 .rounded {
   border-radius: 0.25rem;
 }
 .rounded-full {
   border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -794,12 +827,21 @@ video {
 .bg-opacity-0 {
   --tw-bg-opacity: 0;
 }
+.bg-opacity-60 {
+  --tw-bg-opacity: 0.6;
+}
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.p-0 {
+  padding: 0px;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .p-8 {
   padding: 2rem;
@@ -843,6 +885,9 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.pr-12 {
+  padding-right: 3rem;
 }
 .text-center {
   text-align: center;
@@ -1006,6 +1051,46 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Swiper styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #3b82f6 !important;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: -20px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #3b82f6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important;
+}
+
+/* Убираем лишние отступы в Swiper */
+.swiper-wrapper {
+  align-items: flex-start !important;
+  height: auto !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.swiper {
+  height: auto !important;
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1025,6 +1110,20 @@ body {
   color: rgb(16 185 129 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-fuchsia-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(217 70 239 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-purple-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity, 1));
+}
+
+.hover\:opacity-50:hover {
+  opacity: 0.5;
+}
+
 .hover\:shadow-2xl:hover {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1040,6 +1139,14 @@ body {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.disabled\:cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
 }
 
 @media (min-width: 640px) {

@@ -22,7 +22,7 @@ const ProjectCard = ({ title, company, imageUrl }: ProjectCardProps) => {
       />
       <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-70 transition flex items-center justify-center">
         <h3 className="text-white text-lg font-semibold text-center px-2">
-          {title} {company && <span className="text-accent">({company})</span>}
+          {title} {company && <span>({company})</span>}
         </h3>
       </div>
     </motion.div>

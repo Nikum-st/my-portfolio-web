@@ -2,9 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-
 import { ArrowDownCircle } from "lucide-react";
+import { NavigationButton } from "../NavigationButton/NavigationButton";
 
 interface HomeProps {
   name: string;
@@ -58,13 +57,13 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
           {title}
         </motion.p>
         <motion.div variants={textVariants}>
-          <Link
+          <NavigationButton
             href="/about"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white hover:bg-opacity-80 transition duration-300"
+            className=" text-white hover:bg-opacity-80"
+            icon={<ArrowDownCircle size={24} />}
           >
-            <span className="mr-2">Explore</span>
-            <ArrowDownCircle size={24} />
-          </Link>
+            Explore
+          </NavigationButton>
         </motion.div>
       </div>
     </motion.section>
