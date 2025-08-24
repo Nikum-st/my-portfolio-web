@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "./utils/projects";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import { ProjectsType } from "./types/ProjectsTypes";
 
 const Portfolio = () => {
@@ -52,7 +54,7 @@ const Portfolio = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className=" rounded-xl p-8 max-w-4xl w-full relative"
+              className="rounded-xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -61,36 +63,38 @@ const Portfolio = () => {
               {/* Кнопка закрытия */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 text-text hover:text-accent transition"
+                className="absolute top-4 right-4 text-text hover:text-purple-500 transition z-10 bg-background rounded-full w-8 h-8 flex items-center justify-center shadow-lg"
               >
                 ✕
               </button>
 
               {/* Заголовок */}
-              <h3 className="text-2xl font-bold text-text mb-2">
+              <h3 className="text-2xl font-bold text-text mb-4 pr-12">
                 {selectedProject.title}{" "}
                 {selectedProject.company && (
-                  <span className="text-accent">
-                    ({selectedProject.company})
-                  </span>
+                  <span>({selectedProject.company})</span>
                 )}
               </h3>
 
               {/* Слайдер */}
               {selectedProject.images && selectedProject.images.length > 0 && (
                 <Swiper
-                  modules={[Navigation]}
+                  modules={[Navigation, Pagination]}
                   navigation
-                  spaceBetween={20}
+                  pagination={{ clickable: true }}
+                  spaceBetween={2}
                   slidesPerView={1}
                   className="rounded-xl mb-6"
                 >
                   {selectedProject.images.map((img: string, idx: number) => (
-                    <SwiperSlide key={idx}>
-                      <img
+                    <SwiperSlide key={idx} className="p-0">
+                      <Image
                         src={img}
                         alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                        className="w-full h-full object-cover rounded-xl"
+                        width={800}
+                        height={600}
+                        className="w-full h-auto rounded-xl"
+                        priority={idx === 0}
                       />
                     </SwiperSlide>
                   ))}

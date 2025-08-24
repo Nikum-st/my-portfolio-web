@@ -20,7 +20,7 @@ export const SocialMedia = () => (
     <motion.div variants={socialIconVariants}>
       <a
         href="mailto:nik.uman.developer@gmail.com"
-        className="flex items-center space-x-2 text-text hover:text-accent transition duration-300"
+        className="flex items-center space-x-2 text-text hover:text-purple-500 transition duration-300"
       >
         <Mail size={24} />
         <span>nik.uman.developer@gmail.com</span>
@@ -31,7 +31,7 @@ export const SocialMedia = () => (
         href="https://www.linkedin.com/in/nikita-umanskii-dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center space-x-2 text-text hover:text-accent transition duration-300"
+        className="flex items-center space-x-2 text-text hover:text-purple-500 transition duration-300"
       >
         <Linkedin size={24} />
         <span>LinkedIn</span>
@@ -42,7 +42,7 @@ export const SocialMedia = () => (
         href="https://github.com/Nikum-st"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center space-x-2 text-text hover:text-accent transition duration-300"
+        className="flex items-center space-x-2 text-text hover:text-purple-500 transition duration-300"
       >
         <Github size={24} />
         <span>GitHub</span>
@@ -53,7 +53,7 @@ export const SocialMedia = () => (
         href="https://t.me/nikum_st"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center space-x-2 text-text hover:text-accent transition duration-300"
+        className="flex items-center space-x-2 text-text hover:text-purple-500 transition duration-300"
       >
         <PiTelegramLogo size={24} />
         <span>Telegram</span>
