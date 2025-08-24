@@ -1,8 +1,9 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-
 import { ArrowDownCircle } from "lucide-react";
+import { NavigationLink } from "../NavigationLink/NavigationLink";
 
 interface HomeProps {
   name: string;
@@ -56,13 +57,13 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
           {title}
         </motion.p>
         <motion.div variants={textVariants}>
-          <Link
-            to="/about"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white hover:bg-opacity-80 transition duration-300"
+          <NavigationLink
+            href="/about"
+            className="flex items-center justify-center gap-2"
           >
-            <span className="mr-2">Explore</span>
-            <ArrowDownCircle size={24} />
-          </Link>
+            <ArrowDownCircle />
+            <span>Explore</span>
+          </NavigationLink>
         </motion.div>
       </div>
     </motion.section>
