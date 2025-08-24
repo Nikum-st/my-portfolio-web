@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { ArrowDownCircle } from "lucide-react";
 import { NavigationLink } from "../NavigationLink/NavigationLink";
 
 interface HomeProps {
@@ -56,7 +57,13 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
           {title}
         </motion.p>
         <motion.div variants={textVariants}>
-          <NavigationLink href="/about">Explore</NavigationLink>
+          <NavigationLink
+            href="/about"
+            className="flex items-center justify-center gap-2"
+          >
+            <ArrowDownCircle />
+            <span>Explore</span>
+          </NavigationLink>
         </motion.div>
       </div>
     </motion.section>

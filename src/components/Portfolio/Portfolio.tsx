@@ -63,7 +63,7 @@ const Portfolio = () => {
               {/* Кнопка закрытия */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 text-text hover:text-accent transition z-10 bg-background rounded-full w-8 h-8 flex items-center justify-center shadow-lg"
+                className="absolute top-4 right-4 text-text hover:text-purple-500 transition z-10 bg-background rounded-full w-8 h-8 flex items-center justify-center shadow-lg"
               >
                 ✕
               </button>
@@ -72,9 +72,7 @@ const Portfolio = () => {
               <h3 className="text-2xl font-bold text-text mb-4 pr-12">
                 {selectedProject.title}{" "}
                 {selectedProject.company && (
-                  <span className="text-accent">
-                    ({selectedProject.company})
-                  </span>
+                  <span>({selectedProject.company})</span>
                 )}
               </h3>
 

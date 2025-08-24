@@ -6,11 +6,13 @@ import { useNavigation } from "../../hooks/useNavigation";
 interface NavigationLinkProps {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 export const NavigationLink: React.FC<NavigationLinkProps> = ({
   href,
   children,
+  className,
 }) => {
   const { startNavigation } = useNavigation();
 
@@ -22,7 +24,7 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
     <Link
       href={href}
       onClick={handleClick}
-      className={`text-text hover:text-purple-500 transition duration-300 `}
+      className={`text-text hover:text-purple-500 transition duration-300 ${className}`}
     >
       {children}
     </Link>
