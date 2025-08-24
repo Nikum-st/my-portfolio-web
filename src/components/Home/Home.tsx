@@ -56,15 +56,16 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
         >
           {title}
         </motion.p>
-        <motion.div variants={textVariants}>
+        <motion.div
+          className="text-white hover:text-purple-500 transition duration-300 "
+          variants={textVariants}
+        >
           <NavigationLink
             href="/about"
             className="flex items-center justify-center gap-2"
           >
             <ArrowDownCircle />
-            <span className="text-white hover:text-purple-500 transition duration-300 ${className}">
-              Explore
-            </span>
+            <span>Explore</span>
           </NavigationLink>
         </motion.div>
       </div>
