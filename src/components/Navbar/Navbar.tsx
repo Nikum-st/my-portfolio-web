@@ -30,7 +30,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   return (
     <>
-      {isNavigating && <Loader size="medium" color="text-white" />}
+      {isNavigating && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+          <div className="bg-background p-6 rounded-lg shadow-lg">
+            <Loader size="large" color="text-white" />
+            <p className="mt-4 text-center text-white">Loading...</p>
+          </div>
+        </div>
+      )}
       {!isHomePage && (
         <motion.header
           className={`fixed top-0 left-0 w-full shadow-md z-20 ${

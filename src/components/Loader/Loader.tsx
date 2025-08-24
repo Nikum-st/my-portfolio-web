@@ -14,10 +14,10 @@ export const Loader = ({
   isForm = false,
   fullScreen = false,
 }: LoaderProps) => {
-  const sizeClasses = {
-    small: "w-4 h-4",
-    medium: "w-6 h-6",
-    large: "w-8 h-8",
+  const sizeValues = {
+    small: 16,
+    medium: 24,
+    large: 32,
   };
 
   if (fullScreen) {
@@ -29,7 +29,7 @@ export const Loader = ({
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             className="inline-block"
           >
-            <Loader2 className={`${sizeClasses[size]} ${color}`} />
+            <Loader2 size={sizeValues[size]} className={color} />
           </motion.div>
           {isForm && (
             <p className="mt-4 text-center text-white">Sending message...</p>
@@ -45,7 +45,7 @@ export const Loader = ({
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
       className="inline-block"
     >
-      <Loader2 className={`${sizeClasses[size]} ${color}`} />
+      <Loader2 size={sizeValues[size]} className={color} />
     </motion.div>
   );
 };

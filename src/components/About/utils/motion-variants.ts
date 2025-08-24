@@ -1,0 +1,25 @@
+export const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.75, staggerChildren: 0.3 },
+  },
+};
+
+export const imageVariants = {
+  hidden: { x: -50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.75, ease: "easeOut" },
+  },
+};
+
+export const textVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};

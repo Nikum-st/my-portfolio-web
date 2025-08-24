@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDownCircle } from "lucide-react";
-import { NavigationButton } from "../NavigationButton/NavigationButton";
+import { NavigationLink } from "../NavigationLink/NavigationLink";
 
 interface HomeProps {
   name: string;
@@ -57,13 +56,7 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
           {title}
         </motion.p>
         <motion.div variants={textVariants}>
-          <NavigationButton
-            href="/about"
-            className=" text-white hover:bg-opacity-80"
-            icon={<ArrowDownCircle size={24} />}
-          >
-            Explore
-          </NavigationButton>
+          <NavigationLink href="/about">Explore</NavigationLink>
         </motion.div>
       </div>
     </motion.section>
