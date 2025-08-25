@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ name, title, backgroundImageUrl }) => {
           {title}
         </motion.p>
         <motion.div
-          className="text-white hover:text-purple-500 transition duration-300 "
+          className="text-white hover:text-purple-500 "
           variants={textVariants}
         >
           <NavigationLink
